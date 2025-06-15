@@ -14,7 +14,7 @@ const api = axios.create({
 // Function to get all auctions
 export const getAllAuctions = async () => {
   try {
-    const response = await api.get('/');
+    const response = await api.get('');
     return response.data;
   } catch (error) {
     console.error('Error fetching auctions:', error);
