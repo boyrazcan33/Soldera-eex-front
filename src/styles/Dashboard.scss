@@ -1,0 +1,271 @@
+// Dashboard Styles
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+
+  .loading {
+    text-align: center;
+    padding: 50px;
+    font-size: 18px;
+    color: #666;
+  }
+
+  .error {
+    text-align: center;
+    padding: 50px;
+    color: #d32f2f;
+    
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      
+      &:hover {
+        background-color: #1565c0;
+      }
+    }
+  }
+}
+
+// Header Section
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 40px;
+  
+  h1 {
+    color: #1976d2;
+    font-size: 32px;
+    margin: 0 0 10px 0;
+  }
+  
+  p {
+    color: #666;
+    font-size: 16px;
+    margin: 0 0 20px 0;
+  }
+  
+  .refresh-btn {
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    
+    &:hover {
+      background-color: #1565c0;
+    }
+  }
+}
+
+// Stats Section
+.stats-section {
+  margin-bottom: 40px;
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    
+    .stat-card {
+      background: white;
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-left: 4px solid #1976d2;
+      
+      h3 {
+        margin: 0 0 8px 0;
+        color: #666;
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      
+      .stat-value {
+        margin: 0;
+        font-size: 28px;
+        font-weight: bold;
+        color: #1976d2;
+      }
+    }
+  }
+}
+
+// Auctions Section
+.auctions-section {
+  h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .no-data {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    
+    p {
+      color: #666;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    
+    button {
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      
+      &:hover {
+        background-color: #1565c0;
+      }
+    }
+  }
+  
+  .auctions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    
+    .auction-card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e0e0e0;
+      
+      .auction-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        
+        h3 {
+          margin: 0;
+          color: #1976d2;
+          font-size: 20px;
+        }
+        
+        .auction-date {
+          background: #e3f2fd;
+          color: #1976d2;
+          padding: 6px 12px;
+          border-radius: 16px;
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+      
+      .auction-details {
+        margin-bottom: 20px;
+        
+        p {
+          margin: 8px 0;
+          color: #555;
+          
+          strong {
+            color: #333;
+          }
+        }
+      }
+      
+      .regions-section,
+      .technologies-section {
+        margin-top: 24px;
+        
+        h4 {
+          color: #333;
+          margin-bottom: 12px;
+          font-size: 16px;
+          padding-bottom: 8px;
+          border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .data-table {
+          table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            
+            th,
+            td {
+              text-align: left;
+              padding: 12px 8px;
+              border-bottom: 1px solid #e0e0e0;
+            }
+            
+            th {
+              background-color: #f5f5f5;
+              font-weight: 600;
+              color: #333;
+              font-size: 14px;
+            }
+            
+            td {
+              color: #555;
+              font-size: 14px;
+            }
+            
+            tbody tr:hover {
+              background-color: #f9f9f9;
+            }
+          }
+          
+          .more-data {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-top: 8px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 16px;
+    
+    .dashboard-header h1 {
+      font-size: 24px;
+    }
+    
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .auction-card {
+      .auction-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      
+      .data-table table {
+        font-size: 12px;
+        
+        th,
+        td {
+          padding: 8px 4px;
+        }
+      }
+    }
+  }
+}
