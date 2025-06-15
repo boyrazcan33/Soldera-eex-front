@@ -155,7 +155,7 @@ const Dashboard: React.FC = () => {
                           </tr>
                         </thead>
                         <tbody>
-                          {auction.regions.slice(0, 5).map((region) => (
+                          {auction.regions.map((region) => (
                             <tr key={region.id}>
                               <td>{region.regionName}</td>
                               <td>{region.volumeAllocated.toLocaleString()}</td>
@@ -164,11 +164,7 @@ const Dashboard: React.FC = () => {
                           ))}
                         </tbody>
                       </table>
-                      {auction.regions.length > 5 && (
-                        <p className="more-data">
-                          ... and {auction.regions.length - 5} more regions
-                        </p>
-                      )}
+                      
                     </div>
                   </div>
                 )}
