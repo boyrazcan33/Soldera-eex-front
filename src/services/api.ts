@@ -11,7 +11,6 @@ const api = axios.create({
   },
 });
 
-// Function to get all auctions
 export const getAllAuctions = async () => {
   try {
     const response = await api.get('');
@@ -22,7 +21,6 @@ export const getAllAuctions = async () => {
   }
 };
 
-// Function to get latest auction
 export const getLatestAuction = async () => {
   try {
     const response = await api.get('/latest');
@@ -33,7 +31,6 @@ export const getLatestAuction = async () => {
   }
 };
 
-// Function to get stats
 export const getStats = async () => {
   try {
     const response = await api.get('/stats');

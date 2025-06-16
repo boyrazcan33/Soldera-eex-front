@@ -21,13 +21,12 @@ const Dashboard: React.FC = () => {
           getStats()
         ]);
         
-        // Make sure auctionsData is an array
         setAuctions(Array.isArray(auctionsData) ? auctionsData : []);
         setStats(statsData || { totalAuctions: 0 });
       } catch (error) {
         console.error('Failed to load data:', error);
         setError('Failed to load auction data. Please try again.');
-        setAuctions([]); // Set empty array on error
+        setAuctions([]); 
         setStats({ totalAuctions: 0 });
       } finally {
         setLoading(false);
@@ -44,13 +43,12 @@ const Dashboard: React.FC = () => {
         getAllAuctions(),
         getStats()
       ]);
-      // Make sure auctionsData is an array
       setAuctions(Array.isArray(auctionsData) ? auctionsData : []);
       setStats(statsData || { totalAuctions: 0 });
       setError(null);
     } catch (error) {
       setError('Failed to refresh data');
-      setAuctions([]); // Set empty array on error
+      setAuctions([]); 
       setStats({ totalAuctions: 0 });
     } finally {
       setLoading(false);
