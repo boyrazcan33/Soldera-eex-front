@@ -2,10 +2,9 @@ import axios from 'axios';
 
 const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://french-auction-scraper-640616451900.europe-north1.run.app/api/auctions';
 
-// Create axios instance with base configuration
 const api = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 10000,
+  timeout: 45000, //Changed (10000)
   headers: {
     'Content-Type': 'application/json',
   },
